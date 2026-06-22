@@ -176,3 +176,120 @@ public class BinaryTree<T extends Comparable<T>> {
 }
 
 ```
+## 2. Implementacion de un arbol de enteros
+
+
+**Fecha:** 22/06/2026
+**Descripción:** Se implemento un metodo que sirve para ordenar e imprimir un arbol de enteros, se imprimio de manera horizontal empezando por la rama derecha hasta la izquierda. En el segundo ejercicio se implementaron dos metodos, uno para imprimir el arbol original de manera horizontal, y el otro para invertirlo.
+
+## Ejercicio 1
+
+```java
+
+package Structures.Tress;
+
+import Structures.Node.Node;
+
+public class Ejercicio1 {
+
+    public void insert(int[] numeros) {
+
+        // Crear el arbol de enteros
+        // Insertar cada numero
+        // Imprimir el arbol
+        BinaryTree<Integer> arbolInt = new BinaryTree<>();
+
+        for (int numero : numeros) {
+            arbolInt.add(numero);
+        }
+
+        printTree(arbolInt.getRoot());
+
+    }
+
+    public void printTree(Node<Integer> root) {
+
+        System.out.println("Imprimiendo el arbol");
+        printTreeRecursivo(root, 0);
+
+    }
+
+    private void printTreeRecursivo(Node<Integer> actual, int nivel) {
+
+        if(actual==null)
+            return;
+
+        printTreeRecursivo(actual.getRight(),nivel + 1);
+
+        for (int i = 0; i < nivel; i++) {
+            System.out.print("    ");
+        }
+        System.out.println(actual.getValue());
+        printTreeRecursivo(actual.getLeft(), nivel + 1);
+
+    }
+
+}
+
+```
+## Ejercicio 2
+
+```java
+
+package Structures.Tress;
+
+import Structures.Node.Node;
+
+public class Ejercicio2 {
+
+    public void invertTree(Node<Integer> root) {
+
+        System.out.println("Arbol Original:");
+        printTree(root);
+
+        printInvertidoRecursivo(root);
+
+        System.out.println("Arbol Invertido:");
+        printTree(root);
+
+    }
+
+    public void printTree(Node<Integer> root) {
+
+        System.out.println("Imprimiendo el arbol");
+        printTreeRecursivo(root, 0);
+
+    }
+
+    private void printTreeRecursivo(Node<Integer> actual, int nivel) {
+
+        if (actual == null)
+            return;
+
+        printTreeRecursivo(actual.getRight(), nivel + 1);
+
+        for (int i = 0; i < nivel; i++) {
+            System.out.print("    ");
+        }
+        System.out.println(actual.getValue());
+        printTreeRecursivo(actual.getLeft(), nivel + 1);
+
+    }
+
+    private void printInvertidoRecursivo(Node<Integer> actual) {
+
+        if (actual == null)
+            return;
+
+        Node<Integer> aux = actual.getLeft();
+        actual.setLeft(actual.getRight());
+        actual.setRight(aux);
+
+        printInvertidoRecursivo(actual.getLeft());
+        printInvertidoRecursivo(actual.getRight());
+
+    }
+
+}
+
+```
