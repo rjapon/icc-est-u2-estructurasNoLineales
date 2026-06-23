@@ -8,6 +8,8 @@
 
 ## Descripcion General del Proyecto
 
+Este proyecto implementa un árbol binario de búsqueda (BST) en Java, aplicando operaciones fundamentales como inserción de nodos, inversión del árbol, recorrido por niveles y cálculo de la profundidad máxima. Se utilizan principalmente técnicas de recursividad y estructuras auxiliares como colas para recorrer y procesar el árbol de manera eficiente. Además, se incluye la impresión del árbol en consola para visualizar su estructura jerárquica.
+
 ## Explicacion del Ejercicio 1: Insertar en BST
 
 - El siguiente metodo crea un arbol de enteros con **new Binary tree<>()**, luego recorre el arreglo numeros recibido como parametro e inserta cada elemento al arbol usando el metodo add. Luego llama al metodo **printTree**, para imprimir todo el arbol lo hace de forma recursiva mediante el metodo **printTreeRecursivo**, primero mostrara todo el subarbol derecho, luego el nodo actual y despues todo el subarbol izquierdo.
