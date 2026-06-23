@@ -4,7 +4,7 @@ import Structures.Node.Node;
 
 public class Ejercicio2 {
 
-    public void invertTree(Node<Integer> root) {
+    public void invertBinaryTree(Node<Integer> root) {
 
         System.out.println("Arbol Original:");
         printTree(root);
