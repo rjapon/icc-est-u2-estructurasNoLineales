@@ -6,7 +6,7 @@ public class BinaryTree<T extends Comparable<T>> {
 
     private Node<T> root;
     private int peso;
-
+ 
     // Constructor
     public BinaryTree() {
         this.root = null;
