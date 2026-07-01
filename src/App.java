@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
+import Collections.Maps.Maps;
+import Collections.Set.Sets;
+import Models.Contacto;
 import Models.Persona;
 import Structures.Node.Node;
 import Structures.Tress.BinaryTree;
@@ -17,7 +21,83 @@ public class App {
 
         // runBinaryTree();
 
-        runEjercicios();
+        // runEjercicios();
+
+        //runSets();
+
+        runMaps();
+
+    }
+
+    
+
+    private static void runMaps() {
+        
+        Maps maps = new Maps();
+        maps.buildHashMap();
+        maps.buildLinkedHashMap();
+        maps.buildTreeMap();
+
+    }
+
+    private static void runSets() {
+
+        Sets sets = new Sets();
+
+        // Implementacion -> HashSet hashcode
+
+        System.out.println();
+        System.out.println("==== HashCode ====");
+
+        Set<String> hashSet = sets.construirHashSet();
+
+        System.out.println(hashSet);
+        System.out.println("Size = " + hashSet.size());
+        System.out.println("Contiene 'F'? " + hashSet.contains("F"));
+
+        // Implementacion -> LinkedHashSet hashcode
+
+        System.out.println();
+        System.out.println("==== LinkedHashSet ====");
+
+        Set<String> linkedHashSet = sets.construirLinkedHashSet();
+
+        System.out.println(linkedHashSet);
+        System.out.println("Size = " + linkedHashSet.size());
+        System.out.println("Contiene 'M'? " + linkedHashSet.contains("M"));
+
+        // Implementacion -> TreeSet
+
+        System.out.println();
+        System.out.println("==== TreeSet ====");
+
+        Set<String> treeSet = sets.construirTreeSet();
+
+        System.out.println(treeSet);
+        System.out.println("Size = " + treeSet.size());
+        System.out.println("Contiene 'M'? " + treeSet.contains("M"));
+
+        // Implementacion -> Hash Contacto Set hashCode
+
+        System.out.println();
+        System.out.println("==== Hash Set Contacto ====");
+
+        Set<Contacto> hashSetContactos = sets.construitHashSetContacto();
+
+        System.out.println(hashSetContactos);
+        System.out.println("Size = " + treeSet.size());
+        System.out.println("Contiene 'M'? " + treeSet.contains("M"));
+
+        // Implementacion -> Tree Contacto Set hashCode
+
+        System.out.println();
+        System.out.println("==== Tree Set Contacto ====");
+
+        Set<Contacto> treeSetContactos = sets.construirTreeSetContacto();
+
+        System.out.println(treeSetContactos);
+        System.out.println("Size = " + treeSet.size());
+        System.out.println("Contiene 'M'? " + treeSet.contains("M"));
 
     }
 
@@ -78,7 +158,7 @@ public class App {
 
         System.out.println("Arbol :");
         ejercicio4.printTree(tree4.getRoot());
-        
+
         System.out.println();
         System.out.println("Profunidad :");
         System.out.println(ejercicio4.maxDepth(tree4.getRoot()));
@@ -140,4 +220,5 @@ public class App {
         System.out.println(arbolNumeros.getPeso());
 
     }
+
 }
